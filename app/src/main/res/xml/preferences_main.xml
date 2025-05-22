@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="Security Features">
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="fake_shutdown_enabled"
+            android:summary="Make your device appear to be powered off while still tracking"
+            android:title="@string/feature_fake_shutdown" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="intruder_detection_enabled"
+            android:summary="Capture photos of unauthorized users attempting to access your device"
+            android:title="@string/feature_intruder_detection" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="location_tracking_enabled"
+            android:summary="Track your device's location in case of theft"
+            android:title="@string/feature_location_tracking" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="sim_change_alert_enabled"
+            android:summary="Get notified if someone changes the SIM card in your device"
+            android:title="@string/feature_sim_change" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Account">
+        <Preference
+            android:key="user_profile"
+            android:summary="Edit your personal information"
+            android:title="User Profile">
+            <intent
+                android:targetClass="com.lymors.phonesecure.presentation.ui.profile.UserProfileActivity"
+                android:targetPackage="com.lymors.phonesecure" />
+        </Preference>
+
+        <Preference
+            android:key="emergency_contacts"
+            android:summary="Manage contacts to notify in case of emergency"
+            android:title="Emergency Contacts">
+            <intent
+                android:targetClass="com.lymors.phonesecure.presentation.ui.contacts.EmergencyContactsActivity"
+                android:targetPackage="com.lymors.phonesecure" />
+        </Preference>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Advanced Settings">
+        <Preference
+            android:key="security_settings"
+            android:summary="Configure advanced security options"
+            android:title="Security Settings"
+            app:fragment="com.lymors.phonesecure.presentation.ui.settings.SecuritySettingsFragment" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="About">
+        <Preference
+            android:key="about"
+            android:summary="Information about PhoneSecure app"
+            android:title="About PhoneSecure"
+            app:fragment="com.lymors.phonesecure.presentation.ui.settings.AboutFragment" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

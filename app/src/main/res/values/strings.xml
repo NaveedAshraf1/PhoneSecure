@@ -1,0 +1,206 @@
+<resources>
+    <!-- App name and general strings -->
+    <string name="app_name">PhoneSecure</string>
+    <string name="app_description">Advanced Anti-Theft Security App</string>
+    
+    <!-- Navigation and UI strings -->
+    <string name="nav_home">Home</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_security">Security</string>
+    <string name="nav_location">Location</string>
+    <string name="nav_profile">Profile</string>
+    
+    <!-- Security features -->
+    <string name="feature_anti_theft">Anti-Theft Protection</string>
+    <string name="feature_fake_shutdown">Fake Shutdown</string>
+    <string name="feature_intruder_detection">Intruder Detection</string>
+    <string name="feature_location_tracking">Location Tracking</string>
+    <string name="feature_sim_change">SIM Change Alert</string>
+    <string name="feature_panic_button">Panic Button</string>
+    <string name="feature_remote_control">Remote Control</string>
+    
+    <!-- Accessibility Service -->
+    <string name="accessibility_service_description">PhoneSecure uses this service to provide anti-theft features like Fake Shutdown. This service allows the app to monitor system events to protect your device.</string>
+    <string name="accessibility_service_title">PhoneSecure Protection Service</string>
+    <string name="accessibility_service_summary">Enables anti-theft features like Fake Shutdown</string>
+    
+    <!-- Permissions -->
+    <string name="permission_location_rationale">Location permission is needed to track your device if it gets lost or stolen</string>
+    <string name="permission_camera_rationale">Camera permission is needed to capture photos of potential intruders</string>
+    <string name="permission_contacts_rationale">Contacts permission is needed to send emergency alerts to your trusted contacts</string>
+    <string name="permission_phone_rationale">Phone permission is needed to detect SIM card changes</string>
+    <string name="permission_sms_rationale">SMS permission is needed to send emergency messages</string>
+    <string name="permission_storage_rationale">Storage permission is needed to save intruder photos and logs</string>
+    <string name="permission_overlay_rationale">Overlay permission is needed for the fake shutdown feature</string>
+    <string name="permission_rationale_message">These permissions are essential for the anti-theft features to work properly</string>
+    
+    <!-- Actions -->
+    <string name="action_enable">Enable</string>
+    <string name="action_disable">Disable</string>
+    <string name="action_save">Save</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_continue">Continue</string>
+    <string name="action_back">Back</string>
+    <string name="action_settings">Settings</string>
+    
+    <!-- Notifications -->
+    <string name="notification_channel_security">Security Alerts</string>
+    <string name="notification_channel_location">Location Tracking</string>
+    <string name="notification_intruder_detected">Intruder detected!</string>
+    <string name="notification_sim_changed">SIM card has been changed!</string>
+    <string name="notification_location_tracking">Location tracking is active</string>
+    
+    <!-- Alerts and Messages -->
+    <string name="alert_intruder_detected">Intruder detected! Photo has been captured and sent to your email.</string>
+    <string name="alert_sim_changed">SIM card has been changed! Device is now being tracked.</string>
+    <string name="alert_panic_triggered">Panic alert has been triggered. Your emergency contacts have been notified.</string>
+    <string name="msg_feature_enabled">%1$s has been enabled</string>
+    <string name="msg_feature_disabled">%1$s has been disabled</string>
+    <string name="msg_settings_saved">Settings have been saved</string>
+    <!-- About Screen -->
+    <string name="about_description">PhoneSecure is a comprehensive anti-theft and security application designed to protect your device and personal data.</string>
+    <string name="features_title">Key Features:</string>
+    <string name="features_list">• Fake Shutdown Protection
+• Intruder Detection
+• Location Tracking
+• SIM Change Alerts
+• Emergency Contacts
+• Panic Button</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="open_source_licenses">Open Source Licenses</string>
+    <!-- User Profile -->
+    <string name="personal_info">Personal Information</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email Address</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="emergency_contacts">Emergency Contacts</string>
+    <string name="add_emergency_contact">Add Emergency Contact</string>
+    <string name="save_profile">Save Profile</string>
+    <string name="delete_contact">Delete Contact</string>
+    <string name="contact_name">Contact Name</string>
+    <string name="contact_phone">Contact Phone</string>
+    <string name="add_contact">Add Contact</string>
+    <string name="cancel">Cancel</string>
+    <string name="profile_saved">Profile saved successfully</string>
+    <string name="error_saving_profile">Error saving profile</string>
+    <string name="contact_added">Emergency contact added</string>
+    <string name="contact_deleted">Emergency contact deleted</string>
+    <string name="error_invalid_phone">Please enter a valid phone number</string>
+    <string name="error_invalid_email">Please enter a valid email address</string>
+    <string name="pick_contact">Pick</string>
+    <string name="permission_contacts_rationale">Contact permission is needed to select emergency contacts from your address book</string>
+    <string name="select_phone_number">Select a phone number:</string>
+    <string name="phone_type_home">Home</string>
+    <string name="phone_type_mobile">Mobile</string>
+    <string name="phone_type_work">Work</string>
+    <string name="phone_type_other">Other</string>
+    <string name="phone_type_main">Main</string>
+    <string name="phone_type_description">Phone type icon</string>
+    <string name="select">Select</string>
+    <string name="no_contact_photo">No contact photo available</string>
+    
+    <!-- Emergency Alert Strings -->
+    <string name="emergency_alert">Emergency Alert</string>
+    <string name="emergency_icon">Emergency icon</string>
+    <string name="emergency_description">In case of emergency, you can quickly alert your emergency contacts with your current location or call emergency services.</string>
+    <string name="send_alert_info">Send an alert message with your current location to all your emergency contacts.</string>
+    <string name="send_emergency_alert">Send Emergency Alert</string>
+    <string name="call_emergency_info">Call emergency services directly for immediate assistance.</string>
+    <string name="call_emergency_services">Call Emergency Services</string>
+    <string name="emergency_alert_message">EMERGENCY ALERT: %1$s needs help!</string>
+    <string name="my_location">My current location</string>
+    <string name="emergency_alert_sent">Emergency alert sent to all contacts</string>
+    <string name="no_emergency_contacts">No emergency contacts found. Please add emergency contacts in your profile.</string>
+    <string name="error_sending_alert">Error sending alert: %1$s</string>
+    <string name="permission_required">Permission Required</string>
+    <string name="emergency_permissions_rationale">Location and SMS permissions are required to send emergency alerts with your location.</string>
+    <string name="emergency_permissions_denied">Cannot send emergency alerts without required permissions.</string>
+    <string name="grant">Grant</string>
+    <string name="cancel">Cancel</string>
+    
+    <!-- Location Tracking Strings -->
+    <string name="location_tracking">Location Tracking</string>
+    <string name="location_tracking_status">Location Tracking Status</string>
+    <string name="tracking_active">Location tracking is currently active</string>
+    <string name="tracking_inactive">Location tracking is currently inactive</string>
+    <string name="enable_location_tracking">Enable location tracking</string>
+    <string name="location_history">Location History</string>
+    <string name="no_location_history">No location history available</string>
+    <string name="clear_history">Clear History</string>
+    <string name="refresh_location">Refresh Location</string>
+    <string name="location_icon">Location icon</string>
+    <string name="time_icon">Time icon</string>
+    <string name="coordinates_icon">Coordinates icon</string>
+    <string name="view_on_map">View on Map</string>
+    <string name="location_coordinates">Lat: %1$.6f, Long: %2$.6f</string>
+    <string name="location_permissions_required">Location permissions are required for tracking</string>
+    <string name="location_permissions_rationale">Location permissions are required to track your device location. This helps in finding your device if it is lost or stolen.</string>
+    <string name="location_tracking_started">Location tracking started</string>
+    <string name="location_tracking_stopped">Location tracking stopped</string>
+    <string name="location_history_cleared">Location history cleared</string>
+    <string name="unknown_location">Unknown location</string>
+    
+    <!-- Anti-Theft Protection Strings -->
+    <string name="anti_theft_protection">Anti-Theft Protection</string>
+    <string name="anti_theft_description">Enable various security features to protect your device from theft and unauthorized access.</string>
+    <string name="sim_change_detection">SIM Change Detection</string>
+    <string name="sim_change_description">Automatically detect when the SIM card in your device is changed and take security actions.</string>
+    <string name="enable_sim_change_detection">Enable SIM change detection</string>
+    <string name="motion_detection">Motion Detection</string>
+    <string name="motion_detection_description">Detect unauthorized movement of your device when it should be stationary.</string>
+    <string name="enable_motion_detection">Enable motion detection</string>
+    <string name="sensitivity_low">Sensitivity: Low</string>
+    <string name="sensitivity_medium">Sensitivity: Medium</string>
+    <string name="sensitivity_high">Sensitivity: High</string>
+    <string name="wrong_password_detection">Wrong Password Detection</string>
+    <string name="wrong_password_description">Take security actions when someone repeatedly tries to unlock your device with the wrong password.</string>
+    <string name="enable_wrong_password_detection">Enable wrong password detection</string>
+    <string name="max_password_attempts">Maximum password attempts</string>
+    <string name="remote_lock">Remote Lock</string>
+    <string name="remote_lock_description">Lock your device remotely by sending an SMS with a secret code.</string>
+    <string name="enable_remote_lock">Enable remote lock</string>
+    <string name="secret_code">Secret code</string>
+    <string name="save_settings">Save Settings</string>
+    <string name="settings_saved">Anti-theft settings saved successfully</string>
+    <string name="error_saving_settings">Error saving settings: %1$s</string>
+    <string name="sim_changed_alert">SIM card has been changed!</string>
+    <string name="motion_detected_alert">Unauthorized movement detected!</string>
+    <string name="wrong_password_alert">Too many wrong password attempts!</string>
+    <string name="device_locked_remotely">Device has been locked remotely</string>
+    <string name="secret_code_required">Secret code is required</string>
+    <string name="max_attempts_required">Maximum attempts value is required</string>
+    
+    <!-- Device Admin Strings -->
+    <string name="device_admin_label">PhoneSecure Device Admin</string>
+    <string name="device_admin_description">Allows PhoneSecure to lock your device remotely and monitor password attempts</string>
+    <string name="device_admin_enabled">Device admin enabled</string>
+    <string name="device_admin_disabled">Device admin disabled</string>
+    
+    <!-- Password Protection Strings -->
+    <string name="password_protection">Password Protection</string>
+    <string name="password_protection_description">Secure your app with a password to prevent unauthorized access</string>
+    <string name="enable_password">Enable password protection</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="use_biometric">Use biometric authentication</string>
+    <string name="lock_after_timeout">Lock after timeout</string>
+    <string name="timeout_minutes">Timeout minutes</string>
+    <string name="save_password">Save Password</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="password_hint">Enter your password</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="password_saved">Password settings saved successfully</string>
+    <string name="password_mismatch">Passwords do not match</string>
+    <string name="password_required">Password is required</string>
+    <string name="password_too_short">Password must be at least 4 characters</string>
+    <string name="incorrect_password">Incorrect password</string>
+    <string name="too_many_attempts">Too many failed attempts. Try again later.</string>
+    <string name="biometric_prompt_title">Authenticate to PhoneSecure</string>
+    <string name="biometric_prompt_description">Use your biometric credential to access PhoneSecure</string>
+    <string name="biometric_error">Authentication error</string>
+    <string name="biometric_failed">Biometric authentication failed</string>
+    <string name="biometric_not_available">Biometric authentication is not available on this device</string>
+    <string name="biometric_failed">Authentication failed</string>
+    <string name="biometric_success">Authentication successful</string>
+</resources>

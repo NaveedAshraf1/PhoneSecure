@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.lymors.phonesecure.presentation.ui.home.HomeFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_emergencyAlertFragment"
+            app:destination="@id/emergencyAlertFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_antiTheftFragment"
+            app:destination="@id/antiTheftFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.lymors.phonesecure.presentation.ui.settings.UserProfileFragment"
+        android:label="@string/user_profile"
+        tools:layout="@layout/fragment_user_profile" />
+
+    <fragment
+        android:id="@+id/emergencyAlertFragment"
+        android:name="com.lymors.phonesecure.presentation.ui.emergency.EmergencyAlertFragment"
+        android:label="@string/emergency_alert"
+        tools:layout="@layout/fragment_emergency_alert" />
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.lymors.phonesecure.presentation.ui.settings.AboutFragment"
+        android:label="@string/about"
+        tools:layout="@layout/fragment_about" />
+        
+    <fragment
+        android:id="@+id/antiTheftFragment"
+        android:name="com.lymors.phonesecure.presentation.ui.antitheft.AntiTheftFragment"
+        android:label="@string/anti_theft_protection"
+        tools:layout="@layout/fragment_anti_theft" />
+        
+    <fragment
+        android:id="@+id/passwordSettingsFragment"
+        android:name="com.lymors.phonesecure.presentation.ui.password.PasswordSettingsFragment"
+        android:label="@string/password_protection"
+        tools:layout="@layout/fragment_password_settings" />
+        
+    <fragment
+        android:id="@+id/passwordLoginFragment"
+        android:name="com.lymors.phonesecure.presentation.ui.password.PasswordLoginFragment"
+        android:label="@string/enter_password"
+        tools:layout="@layout/fragment_password_login">
+        <action
+            android:id="@+id/action_passwordLoginFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/passwordLoginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>
