@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="App Lock">
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="app_lock_enabled"
+            android:summary="Require password when opening the app"
+            android:title="Enable App Lock" />
+
+        <Preference
+            android:key="change_password"
+            android:summary="Change your app lock password"
+            android:title="Change Password" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Privacy">
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="hide_sensitive_info"
+            android:summary="Hide sensitive information in notifications"
+            android:title="Hide Sensitive Info" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="auto_lock"
+            android:summary="Automatically lock the app when screen turns off"
+            android:title="Auto Lock" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Advanced">
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="crash_reports"
+            android:summary="Send anonymous crash reports to help improve the app"
+            android:title="Crash Reports" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="analytics"
+            android:summary="Help improve the app by sharing anonymous usage data"
+            android:title="Usage Analytics" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

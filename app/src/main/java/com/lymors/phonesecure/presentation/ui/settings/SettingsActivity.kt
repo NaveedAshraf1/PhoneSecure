@@ -1,63 +1,78 @@
 package com.lymors.phonesecure.presentation.ui.settings
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.lymors.phonesecure.R
+import com.lymors.phonesecure.databinding.ActivitySettingsBinding
+import com.lymors.phonesecure.presentation.ui.about.AboutActivity
+import com.lymors.phonesecure.presentation.ui.contacts.EmergencyContactsActivity
+import com.lymors.phonesecure.presentation.ui.profile.UserProfileActivity
+import com.lymors.phonesecure.util.setupToolbar
 
 /**
  * Activity for managing app settings
  */
-class SettingsActivity : AppCompatActivity(),
-    PreferenceFragmentCompat.OnPreferenceStartFragmentCallback {
+class SettingsActivity : AppCompatActivity() {
+    
+    private lateinit var binding: ActivitySettingsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_settings)
+        binding = ActivitySettingsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         
         // Set up toolbar
-        setSupportActionBar(findViewById(R.id.toolbar))
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        setSupportActionBar(binding.toolbar)
+        setupToolbar(showBackButton = true)
         
-        if (savedInstanceState == null) {
-            supportFragmentManager
-                .beginTransaction()
-                .replace(R.id.settings_container, MainSettingsFragment())
-                .commit()
-        }
-    }
-    
-    override fun onPreferenceStartFragment(
-        caller: PreferenceFragmentCompat,
-        pref: Preference
-    ): Boolean {
-        // Instantiate the new Fragment
-        val fragment = supportFragmentManager.fragmentFactory.instantiate(
-            classLoader,
-            pref.fragment!!
-        )
-        
-        // Set the title
-        fragment.arguments = pref.extras
-        fragment.setTargetFragment(caller, 0)
-        
-        // Replace the current Fragment with the new one
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.settings_container, fragment)
-            .addToBackStack(null)
+        // Set up preferences
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.settings_container, MainSettingsPreferenceFragment())
             .commit()
-            
-        title = pref.title
-        return true
     }
     
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == android.R.id.home) {
-            onBackPressed()
-            return true
+        when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressed()
+                return true
+            }
         }
         return super.onOptionsItemSelected(item)
+    }
+    
+    /**
+     * Main settings preference fragment
+     */
+    class MainSettingsPreferenceFragment : PreferenceFragmentCompat() {
+        override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+            setPreferencesFromResource(R.xml.preferences_main, rootKey)
+            
+            // Set up preference click listeners
+            findPreference<Preference>("user_profile")?.setOnPreferenceClickListener {
+                startActivity(Intent(requireContext(), UserProfileActivity::class.java))
+                true
+            }
+            
+            findPreference<Preference>("emergency_contacts")?.setOnPreferenceClickListener {
+                startActivity(Intent(requireContext(), EmergencyContactsActivity::class.java))
+                true
+            }
+            
+            findPreference<Preference>("security_settings")?.setOnPreferenceClickListener {
+                startActivity(Intent(requireContext(), SecuritySettingsActivity::class.java))
+                true
+            }
+            
+            findPreference<Preference>("about")?.setOnPreferenceClickListener {
+                startActivity(Intent(requireContext(), AboutActivity::class.java))
+                true
+            }
+        }
     }
 }

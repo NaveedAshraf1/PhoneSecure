@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="@string/open_source_licenses"
-            android:textColor="@color/purple_500"
+            android:textColor="@color/black"
             android:textSize="16sp" />
 
     </LinearLayout>

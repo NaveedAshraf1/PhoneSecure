@@ -6,14 +6,13 @@ import android.os.Bundle
 import android.provider.Settings
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.navigation.NavController
-import androidx.navigation.NavOptions
-import androidx.navigation.findNavController
-import com.google.android.material.button.MaterialButton
+import com.lymors.phonesecure.databinding.ActivityMainBinding
+import com.lymors.phonesecure.presentation.ui.antitheft.AntiTheftActivity
+import com.lymors.phonesecure.util.setupToolbar
+import com.lymors.phonesecure.util.toast
 import com.google.android.material.snackbar.Snackbar
 import com.guolindev.permissionx.PermissionX
 import com.lymors.phonesecure.PhoneSecureApp
@@ -25,12 +24,16 @@ import com.lymors.phonesecure.domain.usecase.PanicButtonUseCase
 import com.lymors.phonesecure.presentation.services.FakeShutdownAccessibilityService
 import com.lymors.phonesecure.presentation.services.IntruderDetectionService
 import com.lymors.phonesecure.presentation.services.LocationTrackingService
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
+    
+    private lateinit var binding: ActivityMainBinding
     
     private lateinit var fakeShutdownUseCase: FakeShutdownUseCase
     private lateinit var intruderDetectionUseCase: IntruderDetectionUseCase
@@ -42,13 +45,20 @@ class MainActivity : AppCompatActivity() {
     private var lastPauseTime: Long = 0
     private var isPasswordChecked = false
     
+    // Use cases
+    private lateinit var fakeShutdownUseCase: FakeShutdownUseCase
+    private lateinit var intruderDetectionUseCase: IntruderDetectionUseCase
+    private lateinit var locationTrackingUseCase: LocationTrackingUseCase
+    private lateinit var panicButtonUseCase: PanicButtonUseCase
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         
         // Set up toolbar
-        val toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
+        setSupportActionBar(binding.toolbar)
+        setupToolbar(showBackButton = false)
         
         // Initialize use cases
         initializeUseCases()
@@ -70,34 +80,30 @@ class MainActivity : AppCompatActivity() {
     
     private fun setupUI() {
         // Set up Anti-Theft Protection button
-        val btnActivateProtection = findViewById<MaterialButton>(R.id.btnActivateProtection)
-        btnActivateProtection.setOnClickListener {
-            // Navigate to Anti-Theft Fragment
-            findNavController(R.id.nav_host_fragment).navigate(R.id.action_homeFragment_to_antiTheftFragment)
+        binding.btnActivateProtection.setOnClickListener {
+            // Navigate to Anti-Theft Activity using extension
+            navigateTo<AntiTheftActivity>()
         }
         
         // Set up Fake Shutdown feature
-        val btnEnableFakeShutdown = findViewById<MaterialButton>(R.id.btnEnableFakeShutdown)
-        btnEnableFakeShutdown.setOnClickListener {
+        binding.btnEnableFakeShutdown.setOnClickListener {
             checkAccessibilityPermission()
         }
         
-        val btnActivateFakeShutdown = findViewById<MaterialButton>(R.id.btnActivateFakeShutdown)
-        btnActivateFakeShutdown.setOnClickListener {
+        binding.btnActivateFakeShutdown.setOnClickListener {
             activateFakeShutdown()
         }
         
         // Set up Panic Button
-        val btnPanic = findViewById<MaterialButton>(R.id.btnPanic)
-        btnPanic.setOnClickListener {
+        binding.btnPanic.setOnClickListener {
             triggerPanicButton()
         }
         
         // Set up Settings button
-        val btnSettings = findViewById<MaterialButton>(R.id.btnSettings)
-        btnSettings.setOnClickListener {
-            // TODO: Navigate to Settings screen
-            Toast.makeText(this, "Settings will be implemented in the next step", Toast.LENGTH_SHORT).show()
+        binding.btnSettings.setOnClickListener {
+            // Navigate to Settings Activity
+            // navigateTo<SettingsActivity>()
+            toast("Settings will be implemented in the next step")
         }
         
         // Set up FAB

@@ -52,16 +52,22 @@
         <Preference
             android:key="security_settings"
             android:summary="Configure advanced security options"
-            android:title="Security Settings"
-            app:fragment="com.lymors.phonesecure.presentation.ui.settings.SecuritySettingsFragment" />
+            android:title="Security Settings">
+            <intent
+                android:targetClass="com.lymors.phonesecure.presentation.ui.settings.SecuritySettingsActivity"
+                android:targetPackage="com.lymors.phonesecure" />
+        </Preference>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="About">
         <Preference
             android:key="about"
             android:summary="Information about PhoneSecure app"
-            android:title="About PhoneSecure"
-            app:fragment="com.lymors.phonesecure.presentation.ui.settings.AboutFragment" />
+            android:title="About PhoneSecure">
+            <intent
+                android:targetClass="com.lymors.phonesecure.presentation.ui.about.AboutActivity"
+                android:targetPackage="com.lymors.phonesecure" />
+        </Preference>
     </PreferenceCategory>
 
 </PreferenceScreen>

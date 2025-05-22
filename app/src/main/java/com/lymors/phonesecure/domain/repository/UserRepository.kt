@@ -92,13 +92,8 @@ interface UserRepository {
     fun getPasswordSettingsFlow(): Flow<PasswordSettings>
     
     /**
-    /**
      * Record a failed password attempt
+     * @return true if the maximum number of attempts has been reached, false otherwise
      */
     suspend fun recordFailedPasswordAttempt(): Boolean
-    
-    /**
-     * Reset failed password attempts counter
-     */
-    suspend fun resetFailedPasswordAttempts(): Boolean
 }
